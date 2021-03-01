@@ -11,28 +11,24 @@ const loader = new THREE.FBXLoader();
 
 let loadCharacter = (scene, callback) => {
 
-    let character = null
 
     let setData = (object) => {
         object.name = "Paladin"
-        object.position.set(2, 0, 0)
+        object.position.set(-2, 0, 0)
         object.rotation.y = Math.PI
         let s = 0.02
         object.scale.set(s, s, s)
         scene.add(object)
         model = object
         callback(object)
-        // load(model)
     }
 
-    if (!character) {
+    
         loader.load('src/models/SwordAndShield/' + fileList[0], function (object) {
             setData(object)
-
+            character = object
         })
-    } else {
-        setData(JSON.parse(character))
-    }
+    
 }
 
 let processAnim = (callback) => {
@@ -69,7 +65,9 @@ let loadAnimations = (callback) => {
     processAnim(callback)
 }
 
-
+let getCharacter = () =>{
+    return character
+}
 
 export default loadCharacter
-export { character, loadAnimations }
+export { getCharacter, loadAnimations }

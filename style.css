@@ -24,3 +24,38 @@
     -moz-user-select: none;
     -webkit-user-select: none;
 }
+
+.black {
+    display: none;
+    background-color: black;
+    opacity: .0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    color: blanchedalmond;
+}
+
+.logo-background{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+.logo{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-image: url('images/Samu-Logo.2.png');
+    background-size: auto 70%;
+    /* background-size: cover; */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    top: 0;
+    left: 0;
+}

@@ -1,0 +1,214 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+}
+body{
+    font-family: sans-serif;
+}
+
+audio {
+    border: 2px solid green;
+    display: block;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+ul.multiplayer-list {
+    
+}
+
+ul.multiplayer-list>li { 
+    background-color: royalblue;
+    text-align: center;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.red {
+    color: red
+}
+
+.gray {
+    color: gray
+}
+
+ul.rooms {
+    background-color: saddlebrown;
+    color: white;
+}
+
+.rooms>li {
+    padding: 15px;
+    border-top: 1px solid gray;
+}
+.rooms>li.r-none,
+.rooms>li.r-none:hover{
+    background-color: red;
+}
+
+.rooms>li:first-of-type,
+.rooms>li:first-of-type:hover{
+    background-color: blueviolet;
+}
+
+.rooms>li:hover {
+    background-color: sandybrown;
+}
+
+.hide {
+    display: none !important;
+}
+
+.close {
+    border: 1px solid red;
+}
+
+.close:hover {
+    background-color: sandybrown;
+}
+
+.chat {
+    display: flex;
+    flex-flow: column;
+    width: 250px;
+    margin: auto;
+}
+
+.chat > textarea {
+    height: 200px;
+    overflow-y: scroll;
+}
+.whoami{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    padding: 15px;
+    background-color: aqua;
+    text-align: center;
+}
+
+.user-name-input{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    border: none;
+    font-size: medium;
+}
+
+.my-room{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: brown;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+
+}
+
+
+/**/
+
+
+
+.logout{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    margin: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ui-idContainer {
+    background-color: red;
+    color: aqua;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.ui-login{
+    top: 35vh;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+}
+.ui-login input{
+    border: none;
+    border-bottom: 2px solid red;
+    margin-top: 15px;
+    padding: 5px;
+}
+.ui-login input[type=text]{
+    border: none;
+    border-bottom: 2px solid red;
+    margin-top: 15px;
+    border-top: 2px solid white;
+    /* text-align: center; */
+}
+.ui-login input[type=button]{
+    border: none;
+    margin-top: 15px;
+    background-color: rgb(119, 114, 124);
+    border-bottom: 2px solid red;
+    border-right: 2px solid white;
+    border-top: 2px solid white;
+}
+
+
+.ui-socket{
+    top: 35vh;
+    position: fixed;
+    width: 100%;
+    text-align: center; 
+}
+.ui-socket input{
+    border: none;
+    border-bottom: 2px solid red;
+    margin-top: 15px;
+    padding: 5px;
+}
+.ui-socket input[type=button]{
+    border: none;
+    margin-top: 15px;
+    background-color: rgb(119, 114, 124);
+    border-bottom: 2px solid red;
+    border-top: 2px solid white;
+}
+
+div.list-container{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgb(119, 114, 124);
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+div.list-container ul.userList{
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+div.list-container  ul.userList  li{
+    
+    padding-bottom: 5px;
+}

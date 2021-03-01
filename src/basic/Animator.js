@@ -4,7 +4,6 @@ let mixer
 let inProgress = false
 function onLoopFinished(event) {
     inProgress = false
-    console.log('done');
 }
 class Animator {
     constructor(mesh) {

@@ -1,0 +1,19 @@
+ 
+version: "2"
+
+services:
+  node:
+    build: .
+    image: rpgserver:1.0
+    container_name: node
+    working_dir: /usr/src/app
+    environment:
+        - NODE_ENV=development #development #production
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "3000:3000"
+    command: bash -c "npm run start"
+ 
+#https://nodejs.org/en/knowledge/HTTP/servers/how-to-create-a-HTTPS-server/
