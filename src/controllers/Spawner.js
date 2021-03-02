@@ -5,7 +5,7 @@ let players = {}
 let scene = null
 const loader = new THREE.FBXLoader();
 let move = (model, position) => {
-    console.log(model.position);
+    // console.log(model.position);
     model.position.set(
         position.x,
         position.y,

@@ -5,7 +5,7 @@ const loader = new THREE.FBXLoader();
 let DB = {}
 
 let createDb = () => {
-    for (let index = 0; index < 5; index++) {
+    for (let index = 0; index < 2; index++) {
         create('player-'+index)
     }
 }
