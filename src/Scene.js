@@ -10,6 +10,8 @@ import setCharacter, { mode, setController } from './controllers/CharacterContro
 import './UI/Fade.js'
 // import './UI/Landing.js'
 import skyFollow from './controllers/SkyController.js'
+import './controllers/Broadcast.js'
+import {setCharacter as setCharacterToSpawn} from './controllers/Spawner.js'
 
 const scene = new THREE.Scene();
 
@@ -39,6 +41,7 @@ scene.add(box);
 loadCharacter(scene, (palading) => {
     mouseController(palading)
     setCharacter(palading)
+    setCharacterToSpawn(palading, scene)
     loadAnimations(() => {
         setController(mode.forwardBackwardAndRotation)
     })

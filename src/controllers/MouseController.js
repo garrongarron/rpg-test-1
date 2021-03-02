@@ -5,6 +5,7 @@ import math from '../basic/Math.js'
 import keyListener from '../basic/KeyListener.js'
 import { getDelta } from '../basic/Clock.js'
 import gravity from '../character/Gravity.js'
+import checkAngle from './AngleEmmiter.js'
 // import '../objects/pointer.js'
 // import './ShooterSystem.js'
 
@@ -46,8 +47,8 @@ machine.addCallback(() => {
             if (g.tmp.distance < 2) {
                 camera.position.y += 2 - g.tmp.distance;
             }
-        } 
-        if(prevAcumulatedY==delta.y){
+        }
+        if (prevAcumulatedY == delta.y) {
             delta.y = 0
         }
 
@@ -85,7 +86,9 @@ machine.addCallback(() => {
             target.position.x -= Math.sin(rotationWithGap2) * speed * n
             target.position.z -= Math.cos(rotationWithGap2) * speed * n
         }
+        checkAngle(target)
     }
+
 })
 
 export default setTarget

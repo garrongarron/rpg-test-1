@@ -1,9 +1,10 @@
+import expawner from '../src/controllers/Spawner.js';
 import getPeer from './Peer.js'
 
 let connector = {}
 
 let output = (dataObj) => {
-    console.log(dataObj);
+    expawner(dataObj)
 }
 
 let handleConnection = (conn, comming) => {
@@ -32,16 +33,11 @@ let connectWith = (peerId) => {
     let peer = getPeer()
     let conn = peer.connect(peerId);
     handleConnection(conn, false)
-    // let n= 0
-    // setInterval(() => {
-    //     if(connector[peerId]){
-    //         conn.send('Hello! '+n);
-    //     } else {
-    //         console.log('no jet');
-    //     }
-    // }, 2000);
+    let n= 0
 }
 
-
+let getConnector = () =>{
+    return connector
+}
 export default receiveConnection
-export { connectWith }
+export { connectWith, getConnector}
