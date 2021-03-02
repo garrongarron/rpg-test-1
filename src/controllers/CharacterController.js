@@ -49,6 +49,8 @@ machine.addCallback(() => {
     }
 
     let noKeyPressed = true;
+
+    
     if (keyListener.isPressed(87)) {
         controller.up(deltaTime)
         noKeyPressed = false

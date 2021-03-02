@@ -1,5 +1,6 @@
 import { getCharacter } from '../basic/Character.js'
 import { getConnector } from '../../voice-chat/ConnectionHandler.js'
+import localKeyProcess, { localAngleProcess } from './LocalInputProcess.js'
 
 let character, connector
 let t1 = 0
@@ -18,8 +19,9 @@ t1 = setInterval(() => {
     }
 }, 2 * 1000);
 
-let sendKey = (keyBuffer) =>{
-    if(!ready) return
+let sendKey = (keyBuffer) => {
+    localKeyProcess(keyBuffer)
+    if (!ready) return
     let msg = {
         position: {
             x: character.position.x,
@@ -33,18 +35,19 @@ let sendKey = (keyBuffer) =>{
     )
 }
 
-let sendAngle = (rotationBuffer) =>{
-    if(!ready) return
+let sendAngle = (rotationBuffer) => {
+    localAngleProcess(rotationBuffer)
+    if (!ready) return
     let msg = {
         position: {
             x: character.position.x,
             y: character.position.y,
             z: character.position.z
         },
-        rotation:rotationBuffer
+        rotation: rotationBuffer
     }
     Object.keys(connector).map(key =>
         connector[key].conn.send(msg)
     )
 }
-export {sendKey, sendAngle}
+export { sendKey, sendAngle }

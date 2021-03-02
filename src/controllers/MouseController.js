@@ -76,17 +76,17 @@ machine.addCallback(() => {
             lastN.shift()
             // console.log(11);
         }
-        if (keyListener.isPressed(87)) {
-            target.rotation.y = rotationWithGap2
-            target.position.x += Math.sin(rotationWithGap2) * speed * n
-            target.position.z += Math.cos(rotationWithGap2) * speed * n
-        }
-        if (keyListener.isPressed(83)) {
-            target.rotation.y = rotationWithGap2
-            target.position.x -= Math.sin(rotationWithGap2) * speed * n
-            target.position.z -= Math.cos(rotationWithGap2) * speed * n
-        }
-        checkAngle(target)
+        // if (keyListener.isPressed(87)) {
+        //     target.rotation.y = rotationWithGap2
+        //     target.position.x += Math.sin(rotationWithGap2) * speed * n
+        //     target.position.z += Math.cos(rotationWithGap2) * speed * n
+        // }
+        // if (keyListener.isPressed(83)) {
+        //     target.rotation.y = rotationWithGap2
+        //     target.position.x -= Math.sin(rotationWithGap2) * speed * n
+        //     target.position.z -= Math.cos(rotationWithGap2) * speed * n
+        // }
+        checkAngle(rotationWithGap2)
     }
 
 })

@@ -8,9 +8,9 @@ let out = (angleMemory) => {
     // console.log(angleMemory, "uwu");
 }
 
-let checkAngle = (character) => {
-    if (character.rotation.y == angleMemory) return
-    angleMemory = character.rotation.y
+let checkAngle = (angle) => {
+    if (angle == angleMemory) return
+    angleMemory = angle
 
     let keyMemory = getKetMemory()
     if (keyMemory.has(87) && keyMemory.get(87)) {
