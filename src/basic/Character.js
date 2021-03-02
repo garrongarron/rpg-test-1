@@ -38,7 +38,7 @@ let processAnim = (callback) => {
     Promise.all(promises).then((a) => {
         load(model)
     })
-}
+} 
 
 let loadAnimations = (callback) => {
     let animFrecuentlyUsed = [0, 26, 35, 36, 49, 48, 50, 51, 17, 41, 10, 52, 26]

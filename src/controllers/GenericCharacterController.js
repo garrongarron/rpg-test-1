@@ -3,7 +3,7 @@ import { getDelta } from '../basic/Clock.js'
 import machine from '../basic/Machine.js'
 let lastN = []
 
-class GenericCHaracterController {
+class GenericCharacterController {
     constructor(character) {
         this.character = character
         this.controller = new ForwardBackwardAndRotation(character)
@@ -79,4 +79,4 @@ class GenericCHaracterController {
     }
 }
 
-export default GenericCHaracterController
+export default GenericCharacterController

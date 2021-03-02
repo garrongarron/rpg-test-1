@@ -27,10 +27,10 @@ let updatePosition = (e) => {
 let lockChangeAlert = () => {
     if (document.pointerLockElement === canvas ||
         document.mozPointerLockElement === canvas) {
-        console.log('The pointer lock status is now locked');
+        // console.log('The pointer lock status is now locked');
         document.addEventListener("mousemove", updatePosition, false);
     } else {
-        console.log('The pointer lock status is now unlocked');
+        // console.log('The pointer lock status is now unlocked');
         document.removeEventListener("mousemove", updatePosition, false);
     }
 }

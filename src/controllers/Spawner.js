@@ -1,5 +1,6 @@
 import characters from '../basic/CharacterPull.js'
-import showKeys, { setRotation } from './RemoteCharacterController.js'
+import externalInputProcess, { addAnimations } from './ExternalInputProcess.js'
+
 let character = null
 let players = {}
 let scene = null
@@ -19,18 +20,12 @@ let expawner = (msg) => {
     if (!players[msg.peerId]) {
         players[msg.peerId] = characters.createObjByName(msg.peerId)
         scene.add(players[msg.peerId])
+        addAnimations(players[msg.peerId])
     }
-
-    if (msg.data.rotation) {
-        setRotation(players[msg.peerId], msg.data.rotation)
-    }
-
-    move(players[msg.peerId], msg.data.position)
-
-    if (msg.data.keys) {
-        showKeys(players[msg.peerId], msg.data.keys)
-    }
+    
+    externalInputProcess(msg.peerId, msg.data)
 }
+
 let setCharacter = (t, sc) => {
     character = t
     scene = sc

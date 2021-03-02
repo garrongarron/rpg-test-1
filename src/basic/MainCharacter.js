@@ -16,7 +16,7 @@ let outPromise = new Promise((resolve, reject) => {
     let animations = null
     characterLoaded.then((paladin) => {
         let timer = setInterval(() => {
-            animations = getAnimations()
+            animations = getAnimations().map(anim=>anim)
             if (animations) {
                 clearInterval(timer)
                 addAnimations(paladin)

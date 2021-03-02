@@ -2,7 +2,7 @@ import { getDelta } from '../basic/Clock.js'
 
 let callbacks = {}
 
-let speed = 10
+let speed = 10 
 
 let showKeys = (character, keys) => {
     if (keys[0] == 87 && keys[1] == true) {

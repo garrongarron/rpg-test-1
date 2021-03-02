@@ -11,7 +11,7 @@ import './UI/Fade.js'
 // import './UI/Landing.js'
 import skyFollow from './controllers/SkyController.js'
 import './controllers/Broadcast.js'
-// import {setCharacter as setCharacterToSpawn} from './controllers/Spawner.js'
+import {setCharacter as setCharacterToSpawn} from './controllers/Spawner.js'
 import getPaladinPromise from './basic/MainCharacter.js'
 
 const scene = new THREE.Scene();
@@ -52,6 +52,7 @@ getPaladinPromise().then(paladin => {
     scene.add(paladin)
     skyFollow(() => paladin)
     mouseController(paladin)
+    setCharacterToSpawn(paladin, scene)
 })
 
 

@@ -21,8 +21,7 @@ let loadAnimations = (callback) => {
     Promise.all(promises).then(()=>{
         ready = true
     })
-
-    console.log('start loading animations');
+    // console.log('start loading animations');
 }
 
 loadAnimations()

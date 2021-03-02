@@ -1,45 +1,45 @@
 import Animator from '../basic/Animator.js'
 
-let n = 26
 
-let timeScale
-let loop
 class StateMachine {
     constructor(character) {
         this.anim = new Animator(character)
+        this.loop = false
+        this.timeScale = 1
+        this.n = 26
     }
     set(state) {
-        timeScale = 1
-        loop = false
+        this.timeScale = 1
+        this.loop = false
         if (state == 'runAhead') {
-            n = 36
+            this.n = 36
         } else if (state == 'runBack') {
-            n = 35
+            this.n = 35
         } else if (state == 'walkAhead') {
-            n = 49
+            this.n = 49
         } else if (state == 'walkBack') {
-            n = 48
+            this.n = 48
         } else if (state == 'stealthAhead') {
-            n = 50
+            this.n = 50
         } else if (state == 'stealthBack') {
-            n = 51
+            this.n = 51
         } else if (state == 'stealth') {
-            n = 17
+            this.n = 17
         } else if (state == 'attack') {
-            n = 41
-            timeScale = 2
-            loop = true
+            this.n = 41
+            this.timeScale = 2
+            this.loop = true
         } else if (state == 'block') {
-            n = 10
-            timeScale = 2
+            this.n = 10
+            this.timeScale = 2
         } else if (state == 'jump') {
-            n = 52
+            this.n = 52
         } else if (state == 'idle') {
-            n = 26
+            this.n = 26
         } else {
-            n = 26
+            this.n = 26
         }
-        this.anim.action(n, timeScale, loop)
+        this.anim.action(this.n, this.timeScale, this.loop)
     }
 }
 

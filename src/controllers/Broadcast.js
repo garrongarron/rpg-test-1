@@ -1,4 +1,5 @@
-import { getCharacter } from '../basic/Character.js'
+// import { getCharacter } from '../basic/Character.js'
+import { getPaladinOrNull } from '../basic/MainCharacter.js'
 import { getConnector } from '../../voice-chat/ConnectionHandler.js'
 import localKeyProcess, { localAngleProcess } from './LocalInputProcess.js'
 
@@ -10,8 +11,8 @@ let ready = false
 
 t1 = setInterval(() => {
     let connections = Object.keys(getConnector()).length
-    if (getCharacter() && connections != 0) {
-        character = getCharacter()
+    if (getPaladinOrNull() && connections != 0) {
+        character = getPaladinOrNull()
         connector = getConnector()
         console.log('Listo para enviar mensajes');
         ready = true
@@ -44,7 +45,7 @@ let sendAngle = (rotationBuffer) => {
             y: character.position.y,
             z: character.position.z
         },
-        rotation: rotationBuffer
+        angle: rotationBuffer
     }
     Object.keys(connector).map(key =>
         connector[key].conn.send(msg)

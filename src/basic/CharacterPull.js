@@ -20,11 +20,15 @@ let create = (name) =>{
         object.free = true
         DB[object.uuid] = object
     })
+    
 }
 
 let createObjByName = (peerId) => {
     let free = Object.keys(DB).filter(obj => DB[obj].free)
-    if (free.length == 0) return null
+    if (free.length == 0) {
+        console.log("NO HAY MAS PREFAV",DB);
+        return null
+    }
     DB[free[0]].free = false
     DB[free[0]].name = peerId
     return DB[free[0]]
