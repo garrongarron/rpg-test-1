@@ -4,6 +4,7 @@ let msg = document.createElement('div')
 msg.innerText = "Create room"
 let input = document.createElement('input')
 input.setAttribute('type', 'text')
+input.setAttribute('placeholder', 'Some Room Name')
 let btn = document.createElement('input')
 btn.setAttribute('type', 'button')
 btn.value = 'Create'
@@ -12,13 +13,16 @@ let close = document.createElement('input')
 close.setAttribute('type', 'button')
 close.value = 'Cancel'
 
+let intermediateContainer = document.createElement('div')
+intermediateContainer.appendChild(btn)
+intermediateContainer.appendChild(close)
+
 let msgContainer = document.createElement('div')
 msgContainer.classList.add('ui-login')
 
 msgContainer.appendChild(msg)
 msgContainer.appendChild(input)
-msgContainer.appendChild(btn)
-msgContainer.appendChild(close)
+msgContainer.appendChild(intermediateContainer)
 
 
 

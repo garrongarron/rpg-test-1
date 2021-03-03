@@ -40,6 +40,12 @@ class GenericCharacterController {
         if (input.angle) {
             this.character.rotation.y = input.angle
         }
+        //position
+        if (input.position) {
+            this.character.position.x = input.position.x
+            this.character.position.y = input.position.y
+            this.character.position.z = input.position.z
+        }
 
     }
 

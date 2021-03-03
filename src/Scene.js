@@ -8,11 +8,14 @@ import loadPlaneTerrain from './objects/PlaneTerrain.js'
 import mouseController from './controllers/MouseController.js';
 // import setCharacter, { mode, setController } from './controllers/CharacterController.js';
 import './UI/Fade.js'
-// import './UI/Landing.js'
+import './UI/Landing.js'
+// import run from "../voice-chat/app.js"
 import skyFollow from './controllers/SkyController.js'
 import './controllers/Broadcast.js'
 import {setCharacter as setCharacterToSpawn} from './controllers/Spawner.js'
 import getPaladinPromise from './basic/MainCharacter.js'
+
+// run()
 
 const scene = new THREE.Scene();
 
@@ -35,18 +38,9 @@ if (false) {
 
 
 //character
-scene.add(box);
+// scene.add(box);
 
 // scene.add(plane);
-
-// loadCharacter(scene, (palading) => {
-//     mouseController(palading)
-//     setCharacter(palading)
-//     setCharacterToSpawn(palading, scene)
-//     loadAnimations(() => {
-//         setController(mode.forwardBackwardAndRotation)
-//     })
-// })
 
 getPaladinPromise().then(paladin => {
     scene.add(paladin)

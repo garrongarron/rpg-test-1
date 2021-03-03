@@ -1,7 +1,8 @@
 import tmp from '../Tmp.js'
 
 let msg = document.createElement('div')
-msg.innerText = "Connect to the socket.io & peer.js servers"
+msg.innerText = "Ready to"
+// msg.innerText = "Connect to the socket.io & peer.js servers"
 let btn = document.createElement('input')
 btn.setAttribute('type', 'button')
 btn.value = 'Connect'

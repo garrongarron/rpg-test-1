@@ -1,5 +1,6 @@
 import expawner from '../src/controllers/Spawner.js';
 import getPeer from './Peer.js'
+import characters from '../src/basic/CharacterPull.js'
 
 let connector = {}
 
@@ -18,6 +19,9 @@ let handleConnection = (conn, comming) => {
         });
     })
     conn.on('close', function () {
+        let someone = characters.getObjByName(conn.peer)
+        someone.position.y += 2
+        characters.deleteObject(someone)
         delete connector[conn.peer]
     });
 }
@@ -33,11 +37,11 @@ let connectWith = (peerId) => {
     let peer = getPeer()
     let conn = peer.connect(peerId);
     handleConnection(conn, false)
-    let n= 0
+    let n = 0
 }
 
-let getConnector = () =>{
+let getConnector = () => {
     return connector
 }
 export default receiveConnection
-export { connectWith, getConnector}
+export { connectWith, getConnector }

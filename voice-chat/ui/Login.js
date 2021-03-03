@@ -4,6 +4,7 @@ let msg = document.createElement('div')
 msg.innerText = "Write your name"
 let input = document.createElement('input')
 input.setAttribute('type', 'text')
+input.setAttribute('placeholder', 'Other Name')
 let btn = document.createElement('input')
 btn.setAttribute('type', 'button')
 btn.value = 'Save'
@@ -31,7 +32,11 @@ let callback = () => { console.log(input.value); }
 let setCallback = (cb) => { callback = cb }
 let submit = () => { callback(input.value) }
 
-btn.addEventListener('click', submit)
+btn.addEventListener('click', () => {
+    if (input.value.length > 3){
+        submit()
+    }
+})
 input.addEventListener('keyup', validations)
 input.addEventListener('paste', () => {
     setTimeout(() => {
@@ -41,8 +46,8 @@ input.addEventListener('paste', () => {
 
 
 let form = {
-    show:showLoginForm,
-    hide:hideLoginForm,
+    show: showLoginForm,
+    hide: hideLoginForm,
     setCallback
 }
 

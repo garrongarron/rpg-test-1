@@ -14,6 +14,12 @@ let externalInputProcess = (peerId, data) => {
             angle: data.angle
         })
     }
+
+    if (data.position) {
+        externalPlayer[peerId].update({
+            position: data.position
+        })
+    }
 }
 
 let addAnimations = (player) => {

@@ -15,101 +15,106 @@ import showLogoutBtn from './ui/Logout.js'
 import setRoom from './MyRoom.js'
 import receiveConnection from './ConnectionHandler.js'
 
+let run = () => {
 
-clickOnRoom((li) => {
-    li.addEventListener('click', (e) => {
-        console.log('Room selected ' +li.innerText);
-        roomSelected(li.innerText)
+    clickOnRoom((li) => {
+        li.addEventListener('click', (e) => {
+            console.log('Room selected ' + li.innerText);
+            roomSelected(li.innerText)
+            hideRooms()
+            stopRoomRequests()
+            setRoom()
+        })
+    })
+
+
+
+    let loginCallback = (value) => {
+        mySelf.username = value
+        localStorage.setItem('name', mySelf.username)
+        setName(mySelf.username)
+        login.hide()
+        socketForm.show()
+        showLogoutBtn()
+    }
+
+    login.setCallback(loginCallback)
+    let name = localStorage.getItem('name')
+    if (!name) {
+        login.show()
+    } else {
+        loginCallback(name)
+    }
+
+
+
+    socketForm.setCallback(() => {
+        try {
+            socketConnection().then(() => {
+                console.log('status socket.io connection ok')
+
+                ////////////////////////////////////
+                getPeerId().then(id => {
+                    console.log('when succes', id);
+                    mySelf.id = id
+                    setId(id)
+                    setSocketIOListener()
+                    getRooms(socket)
+                    checkAudio()
+                    receiveConnection()
+                }).catch(e => {
+                    console.log('fails', e);
+                })
+
+            }).fail(() => console.log('status connection fail'))
+        } catch (error) {
+            console.log('Attemping connection to soket.io server');
+        }
+        socketForm.hide()
+    })
+
+    let setSocketIOListener = () => {
+        socket.conn.on('welcome', data => {
+            populate(data, 'welcome')
+        })
+        socket.conn.on('user-connected', data => {
+            populate(data, 'user-connected')
+        })
+        socket.conn.on('user-disconnected', data => {
+            populate(data)
+        })
+
+    }
+
+    let newRoom = getNewRoomBtn()
+    newRoom.addEventListener('click', () => {
+        room.show()
         hideRooms()
         stopRoomRequests()
-        setRoom()
+        room.setCallback((roomName) => {
+            console.log('Room  ' + roomName);//todo
+            roomSelected(roomName)
+            room.hide()
+            setRoom()
+            hideRooms()
+        })
     })
-})
 
-
-
-let loginCallback = (value) => {
-    mySelf.username = value
-    localStorage.setItem('name', mySelf.username)
-    setName(mySelf.username)
-    login.hide()
-    socketForm.show()
-    showLogoutBtn()
-}
-
-login.setCallback(loginCallback)
-let name = localStorage.getItem('name')
-if (!name) {
-    login.show()
-} else {
-    loginCallback(name)
-}
-
-
-
-socketForm.setCallback(() => {
-    try {
-        socketConnection().then(() => {
-            console.log('status socket.io connection ok')
-
-            ////////////////////////////////////
-            getPeerId().then(id => {
-                console.log('when succes', id);
-                mySelf.id = id
-                setId(id)
-                setSocketIOListener()
-                getRooms(socket)
-                checkAudio()
-                receiveConnection()
-            }).catch(e => {
-                console.log('fails', e);
-            })
-
-        }).fail(() => console.log('status connection fail'))
-    } catch (error) {
-        console.log('Attemping connection to soket.io server');
-    }
-    socketForm.hide()
-})
-
-let setSocketIOListener = () => {
-    socket.conn.on('welcome', data => {
-        populate(data, 'welcome')
-    })
-    socket.conn.on('user-connected', data => {
-        populate(data, 'user-connected')
-    })
-    socket.conn.on('user-disconnected', data => { 
-        populate(data)
-    })
-    
-}
-
-let newRoom = getNewRoomBtn()
-newRoom.addEventListener('click', () => {
-    room.show()
-    hideRooms()
-    stopRoomRequests()
-    room.setCallback((roomName) => {
-        console.log('Room  ' + roomName);//todo
-        roomSelected(roomName)
+    let cancel = getCancelBtn()
+    cancel.addEventListener('click', () => {
+        getRooms(socket)
         room.hide()
-        setRoom()
-        hideRooms()
     })
-})
-
-let cancel = getCancelBtn()
-cancel.addEventListener('click', () => {
-    getRooms(socket)
-    room.hide()
-})
 
 
 
 
-let roomSelected = (roomName) => {
-    mySelf.room = roomName
-    socket.conn.emit('join-room', mySelf.room, mySelf.id, mySelf.username)
-    // console.log(mySelf);
+    let roomSelected = (roomName) => {
+        mySelf.room = roomName
+        socket.conn.emit('join-room', mySelf.room, mySelf.id, mySelf.username)
+        // console.log(mySelf);
+    }
+
 }
+
+export default run

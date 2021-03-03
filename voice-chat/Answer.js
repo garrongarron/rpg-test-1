@@ -11,12 +11,12 @@ let answer = (stream) => {
         call.on('stream', hisStream => {
             audio = mediaFactody()
             contenedor = document.querySelector('.u-' + call.peer)
-            if(contenedor == null){
+            if (contenedor == null) {
                 contenedor = document.createElement('ul')
                 tmp.appendChild(contenedor)
                 contenedor.classList.add('u-' + call.peer)
                 userList = document.querySelector('.multiplayer-list')
-                if(userList != null){
+                if (userList != null) {
                     userList.appendChild(contenedor)
                 }
             }

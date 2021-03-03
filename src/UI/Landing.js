@@ -1,3 +1,5 @@
+import run from "../../voice-chat/app.js"
+
 let background = document.createElement('div')
 background.classList.add('logo-background')
 background.innerText = 'Fede'
@@ -65,6 +67,7 @@ let fadeOut =()=>{
             opacity = 0
             clearInterval(interval)
             background.style.display = 'none'
+            run()
         }
         background.style.opacity = opacity
     }, 1000 * getDelta());
