@@ -2,7 +2,7 @@ import run from "../../voice-chat/app.js"
 
 let background = document.createElement('div')
 background.classList.add('logo-background')
-background.innerText = 'Fede'
+background.innerText = ''
 
 document.body.appendChild(background)
 
@@ -18,10 +18,10 @@ let start = () => {
     setTimeout(() => {
         audio.play();
         fadeTologo()
-        setTimeout(() => {
-            fadeFromlogo()
-        }, 1000 * 3);
     }, 1000);
+    setTimeout(() => {
+        fadeFromlogo()
+    }, 1000 * 4);
     console.log('ok');
     document.removeEventListener('click', start)
 }
