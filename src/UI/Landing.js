@@ -37,6 +37,7 @@ document.body.appendChild(background)
 
 let logo = document.createElement('div')
 logo.classList.add('logo')
+logo.innerText = 'The Warrior'
 document.body.appendChild(logo)
 
 let audio = document.createElement('audio')
