@@ -29,7 +29,7 @@
 
 /*Delete from here*/
 
-* {
+.web-container * {
     list-style: none;
     text-decoration: none;
 }
