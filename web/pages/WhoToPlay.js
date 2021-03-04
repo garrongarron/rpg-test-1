@@ -11,7 +11,7 @@ let components = [
         _('h1', 'How to play Warrior'),
         _('br'),
         _('strong', `Displacement`),
-        _('p', `To move around the wolr you can use ASDW key.`),
+        _('p', `To move around the wolrd you can use ASDW key.`),
         _('br'),
         _('strong', `Atack`),
         _('p', `Press E key.`),
