@@ -16,16 +16,27 @@ msgContainer.appendChild(input)
 msgContainer.appendChild(btn)
 
 
-input.addEventListener('focus', ()=>{
+
+input.addEventListener('focus', () => {
     msg.innerText = "More Than 3 letters"
 })
-input.addEventListener('blur', ()=>{
+input.addEventListener('blur', () => {
     msg.innerText = "Write your name"
 })
 
 
 
-let showLoginForm = () => { document.body.appendChild(msgContainer) }
+let showLoginForm = () => {
+    document.body.appendChild(msgContainer)
+    //Place the arrow to lead the player
+    let info = input.getBoundingClientRect()
+    let arrow = document.querySelector('.arrow-container')
+    arrow.classList.remove('hide')
+    let x = (info.x+info.width)+'px'
+    arrow.style.left = x
+    arrow.style.top = (info.top-50)+'px'
+    console.log(info, x);
+}
 let hideLoginForm = () => { tmp.appendChild(msgContainer) }
 
 input.addEventListener('keydown', (e) => {
@@ -42,7 +53,7 @@ let setCallback = (cb) => { callback = cb }
 let submit = () => { callback(input.value) }
 
 btn.addEventListener('click', () => {
-    if (input.value.length > 3){
+    if (input.value.length > 3) {
         submit()
     }
 })

@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-.bottom-bar, .bottom-bar-background{
+.bottom-bar, .bottom-bar-background {
     position: fixed;
     bottom: 0;
     display: flex;
@@ -14,7 +14,7 @@
     border-radius: 2vw;
     margin: 1vw;
     /* box-shadow: 4px 4px 2px 1px rgba(218, 22, 8, 0.2); */
-    border: 4px solid  rgba(0,0,0, 0.5);
+    border: 4px solid rgba(0, 0, 0, 0.5);
 }
 
 .bottom-bar-background {
@@ -38,7 +38,7 @@
     color: blanchedalmond;
 }
 
-.logo-background{
+.logo-background {
     background-color: black;
     width: 100%;
     height: 100vh;
@@ -52,7 +52,8 @@
     cursor: pointer;
     user-select: none;
 }
-.logo{
+
+.logo {
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -64,4 +65,68 @@
     background-attachment: fixed;
     top: 0;
     left: 0;
+    display: none;
+    opacity: 0;
 }
+
+/*ANIMATIONS*/
+
+/*LOGO FADE IN => FADE OUT */
+
+.logo-fadeIn {
+    animation-name: fadeInLogo;
+    animation-duration: 3.5s;
+}
+
+@keyframes fadeInLogo {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/*LOGO-BACKGROUND FADE OUT */
+.logo-background-fadeOut{
+    animation-name: fadeOutFromBlack;
+    animation-duration: 7s;
+}
+@keyframes fadeOutFromBlack {
+    0% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.arrow-container{
+    transform: rotateZ(45deg);
+    z-index: 10;
+    position: fixed;
+    top: 150px;
+    left: 150px;
+}
+#flecha{
+
+    animation: slide1 1s ease-in-out infinite;
+}
+@keyframes slide1 {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(0, 10px);
+    }
+  }

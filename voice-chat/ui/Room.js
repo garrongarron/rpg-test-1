@@ -9,10 +9,10 @@ let btn = document.createElement('input')
 btn.setAttribute('type', 'button')
 btn.value = 'Create'
 
-input.addEventListener('focus', ()=>{
+input.addEventListener('focus', () => {
     msg.innerText = "More Than 3 letters"
 })
-input.addEventListener('blur', ()=>{
+input.addEventListener('blur', () => {
     msg.innerText = "Create room"
 })
 
@@ -33,7 +33,17 @@ msgContainer.appendChild(intermediateContainer)
 
 
 
-let showLoginForm = () => { document.body.appendChild(msgContainer) }
+let showLoginForm = () => {
+    document.body.appendChild(msgContainer)
+    //Place the arrow to lead the player
+    let info = input.getBoundingClientRect()
+    let arrow = document.querySelector('.arrow-container')
+    arrow.classList.remove('hide')
+    arrow.style.transform = 'rotateZ(45deg)';
+    let x = (info.x + info.width) + 'px'
+    arrow.style.left = x
+    arrow.style.top = (info.top - 50) + 'px'
+}
 let hideLoginForm = () => { tmp.appendChild(msgContainer) }
 
 input.addEventListener('keydown', (e) => {
@@ -49,9 +59,9 @@ let callback = () => { console.log(input.value); }
 let setCallback = (cb) => { callback = cb }
 let submit = () => { callback(input.value) }
 
-btn.addEventListener('click', ()=>{
-    if(input.value.length > 3){
-        submit
+btn.addEventListener('click', () => {
+    if (input.value.length > 3) {
+        submit()
     }
 })
 input.addEventListener('keyup', validations)
@@ -61,13 +71,13 @@ input.addEventListener('paste', () => {
     }, 10);
 })
 
-let getCancelBtn = () =>{
+let getCancelBtn = () => {
     return close
 }
 
 let form = {
-    show:showLoginForm,
-    hide:hideLoginForm,
+    show: showLoginForm,
+    hide: hideLoginForm,
     setCallback
 }
 

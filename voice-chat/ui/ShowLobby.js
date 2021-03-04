@@ -37,8 +37,14 @@ let setUsers = (arrayUser) => {
         newRoom.appendChild(getNewRoomBtn())
         userList.appendChild(newRoom)
     }
-
-
+     //Place the arrow to lead the player
+     let info = userList.getBoundingClientRect()
+     let arrow = document.querySelector('.arrow-container')
+     arrow.classList.remove('hide')
+     arrow.style.transform = 'rotateZ(-135deg)';
+     let x = (info.x -50) + 'px'
+     arrow.style.left = x
+     arrow.style.top = (info.top) + 'px'
 }
 
 let callbacks = []

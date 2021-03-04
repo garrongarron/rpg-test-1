@@ -92,6 +92,9 @@ let run = () => {
         hideRooms()
         stopRoomRequests()
         room.setCallback((roomName) => {
+            //clear the arrow
+            let arrow = document.querySelector('.arrow-container')
+            arrow.classList.add('hide')
             console.log('Room  ' + roomName);//todo
             roomSelected(roomName)
             room.hide()
