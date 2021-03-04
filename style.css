@@ -45,6 +45,12 @@
     top: 0;
     left: 0;
     position: fixed;
+    color: blue;
+    text-align: center;
+    line-height: 100vh;
+    width: 100vw;
+    cursor: pointer;
+    user-select: none;
 }
 .logo{
     position: fixed;

@@ -3,7 +3,6 @@
     src: url('fonts/Seagram-tfb.ttf');
 }
 
-
 * {
     padding: 0;
     margin: 0;
@@ -12,7 +11,8 @@
     text-decoration: none;
     outline: none;
 }
-body{
+
+body {
     font-family: sans-serif;
 }
 
@@ -27,11 +27,9 @@ button {
     border-radius: 50%;
 }
 
-ul.multiplayer-list {
-    
-}
+ul.multiplayer-list {}
 
-ul.multiplayer-list>li { 
+ul.multiplayer-list>li {
     background-color: royalblue;
     text-align: center;
     min-height: 100px;
@@ -57,13 +55,12 @@ ul.rooms {
     padding: 15px;
     border-top: 1px solid gray;
 }
-.rooms>li.r-none,
-.rooms>li.r-none:hover{
+
+.rooms>li.r-none, .rooms>li.r-none:hover {
     background-color: red;
 }
 
-.rooms>li:first-of-type,
-.rooms>li:first-of-type:hover{
+.rooms>li:first-of-type, .rooms>li:first-of-type:hover {
     background-color: blueviolet;
 }
 
@@ -90,11 +87,12 @@ ul.rooms {
     margin: auto;
 }
 
-.chat > textarea {
+.chat>textarea {
     height: 200px;
     overflow-y: scroll;
 }
-.whoami{
+
+.whoami {
     position: fixed;
     top: 0;
     z-index: 1;
@@ -105,10 +103,9 @@ ul.rooms {
     font-size: 1em;
     text-shadow: 1px 1px 2px rgb(251, 255, 4);
     color: red;
-    
 }
 
-.user-name-input{
+.user-name-input {
     width: 100%;
     height: 100vh;
     position: relative;
@@ -117,7 +114,7 @@ ul.rooms {
     font-size: medium;
 }
 
-.my-room{
+.my-room {
     position: fixed;
     top: 0;
     right: 0;
@@ -128,14 +125,10 @@ ul.rooms {
     border-radius: 5px;
     font-weight: bold;
     font-family: 'gotic';
+    cursor: pointer;
 }
 
-
-/**/
-
-
-
-.logout{
+.logout {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -158,7 +151,8 @@ ul.rooms {
     font-size: smaller;
     font-family: 'gotic';
 }
-.ui-login{
+
+.ui-login {
     top: 35vh;
     position: fixed;
     width: 100%;
@@ -169,26 +163,48 @@ ul.rooms {
     flex-direction: column;
     align-items: center;
 }
-.ui-login input{
+
+.ui-login input {
     border: none;
     margin-top: 15px;
     padding: 5px;
     font-family: 'gotic';
 }
-.ui-login input[type=text]{
+
+.ui-login input[type=text] {
     margin-top: 15px;
     text-align: center;
     font-size: 1.5em;
     background: none;
     text-shadow: 1px 1px 2px rgb(251, 255, 4);
     color: red;
+    cursor: pointer;
+    animation: beforeBorders 5s forwards ease-in-out;
 }
-.ui-login input[type=text]::placeholder{
+.ui-login input[type=text]::after {
+    content: 'More than letters';
+}
+@keyframes beforeBorders {
+    0% {
+        background: rgba(.5, .5, .5, 0)
+    }
+    25% {
+        background: rgba(.5, .5, .5, 1)
+    }
+    75% {
+        background: rgba(.5, .5, .5, 1)
+    }
+    100% {
+        background: rgba(.5, .5, .5, 0)
+    }
+}
+
+.ui-login input[type=text]::placeholder {
     text-shadow: 1px 1px 2px rgb(251, 255, 4);
     color: red;
 }
 
-.ui-login input[type=button]{
+.ui-login input[type=button] {
     border: none;
     margin-top: 15px;
     background-color: rgb(119, 114, 124);
@@ -197,30 +213,29 @@ ul.rooms {
     border-top: 2px solid white;
 }
 
-
-.ui-socket{
+.ui-socket {
     top: 35vh;
     position: fixed;
     width: 100%;
-    text-align: center; 
+    text-align: center;
     font-family: 'gotic';
     text-shadow: 1px 1px 2px rgb(251, 255, 4);
     color: red;
-
-    
     background-image: url('img/Connect.png');
     background-size: 200px;
     background-repeat: no-repeat;
-    background-position:  center 60%;
+    background-position: center 60%;
 }
-.ui-socket input{
+
+.ui-socket input {
     border: none;
     border-bottom: 2px solid red;
     margin-top: 15px;
     padding: 5px;
     font-family: 'gotic';
 }
-.ui-socket input[type=button]{
+
+.ui-socket input[type=button] {
     border: none;
     margin-top: 0px;
     margin-bottom: 35px;
@@ -228,15 +243,16 @@ ul.rooms {
     border: none;
     width: 120px;
     height: 35px;
-    color:cornsilk;
+    color: cornsilk;
     font-size: 1.5em;
     text-shadow: 1px 1px 2px rgb(255, 50, 4);
 }
-.ui-socket input[type=button]:hover{
+
+.ui-socket input[type=button]:hover {
     color: orange;
 }
 
-div.list-container{
+div.list-container {
     position: fixed;
     top: 0;
     right: 0;
@@ -246,12 +262,19 @@ div.list-container{
     cursor: pointer;
     font-family: 'gotic';
 }
-div.list-container ul.userList{
+
+div.list-container ul.userList {
     padding-top: 5px;
     padding-right: 5px;
     padding-left: 5px;
 }
-div.list-container  ul.userList  li{
-    
+
+div.list-container ul.userList li {
     padding-bottom: 5px;
+}
+
+.ui-login input[type=text]:before, .ui-login input[type=text]:after {
+    content: "";
+    position: absolute;
+    background: var(--color);
 }

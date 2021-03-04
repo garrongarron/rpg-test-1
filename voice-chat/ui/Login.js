@@ -16,6 +16,15 @@ msgContainer.appendChild(input)
 msgContainer.appendChild(btn)
 
 
+input.addEventListener('focus', ()=>{
+    msg.innerText = "More Than 3 letters"
+})
+input.addEventListener('blur', ()=>{
+    msg.innerText = "Write your name"
+})
+
+
+
 let showLoginForm = () => { document.body.appendChild(msgContainer) }
 let hideLoginForm = () => { tmp.appendChild(msgContainer) }
 

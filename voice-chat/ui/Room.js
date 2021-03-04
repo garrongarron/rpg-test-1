@@ -9,6 +9,13 @@ let btn = document.createElement('input')
 btn.setAttribute('type', 'button')
 btn.value = 'Create'
 
+input.addEventListener('focus', ()=>{
+    msg.innerText = "More Than 3 letters"
+})
+input.addEventListener('blur', ()=>{
+    msg.innerText = "Create room"
+})
+
 let close = document.createElement('input')
 close.setAttribute('type', 'button')
 close.value = 'Cancel'
@@ -42,7 +49,11 @@ let callback = () => { console.log(input.value); }
 let setCallback = (cb) => { callback = cb }
 let submit = () => { callback(input.value) }
 
-btn.addEventListener('click', submit)
+btn.addEventListener('click', ()=>{
+    if(input.value.length > 3){
+        submit
+    }
+})
 input.addEventListener('keyup', validations)
 input.addEventListener('paste', () => {
     setTimeout(() => {

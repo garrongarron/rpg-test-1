@@ -2,7 +2,13 @@ import run from "../../voice-chat/app.js"
 
 let background = document.createElement('div')
 background.classList.add('logo-background')
-background.innerText = ''
+background.innerText = 'Click to start'
+let logoBackground = () =>{
+    background.innerText = ''
+    background.style.cursor = 'inherit';
+    background.removeEventListener('click', logoBackground)
+}
+background.addEventListener('click', logoBackground)
 
 document.body.appendChild(background)
 

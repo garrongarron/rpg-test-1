@@ -6,15 +6,15 @@ if (keyListener.isPressed(70)) {
 }
 let flag = false
 document.addEventListener('keydown', (e) => {
-    if (e.keyCode == 70) {
-        flag = !flag
-        clearInterval(interval)
-        if(flag){
-            fadeToBlack()
-        } else {
-            fadeFromBlack()
-        }
-    }
+    // if (e.keyCode == 70) {
+    //     flag = !flag
+    //     clearInterval(interval)
+    //     if(flag){
+    //         fadeToBlack()
+    //     } else {
+    //         fadeFromBlack()
+    //     }
+    // }
 })
 
 
