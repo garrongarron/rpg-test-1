@@ -16,13 +16,13 @@ router.linkTo('/')
 
 
 let sectionStyle = `
-section, ul{
+.web-container section, .web-container  ul{
     width: 1100px; margin: 0 auto
 }
-section{
+.web-container section{
     padding: 0 .25em
 }
 @media (max-width: 1100px) { 
-    ul{flex-flow: column} 
+    .web-container  ul{flex-flow: column} 
 }`
 cssLoader.set(sectionStyle)
