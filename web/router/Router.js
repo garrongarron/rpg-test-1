@@ -8,8 +8,8 @@ dummyNode.innerText = "Dummi Text"
 let linkTo = (pathname) => {
     pathname = pathname.replace(/ /g, "-")
     // pathname = pathname.replace(' ', '-')
-    history.pushState({}, '', pathname)
-    run()//go ahead
+    // history.pushState({}, '', pathname)
+    run(pathname)//go ahead
 }
 
 let routes = {
@@ -31,15 +31,23 @@ window.onpopstate = (e) => {
     run()//go back
 }
 
-let run = () => {
+let run = (pathname) => {
+    console.log(pathname);
     if (routes[lastPage]) routes[lastPage].hide()
-    if (routes[location.pathname]) routes[location.pathname].show()
-    else {
+    console.log(routes[pathname], routes, pathname);
+    if (routes[pathname]) {
+        lastPage = pathname
+        routes[pathname].show()
+    } else if (routes['/' + pathname]) {
+        routes['/' + pathname].show()
+        lastPage = '/' + pathname
+    } else {
         page_404.show()
         lastPage = '404'
         return
     }
-    lastPage = location.pathname
+    // lastPage = location.pathname
+
 }
 
 let router = {
