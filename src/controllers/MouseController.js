@@ -11,7 +11,7 @@ import checkAngle from './AngleEmmiter.js'
 
 let interpolation = .99
 let rotation = 0
-let gap = 20
+let gap = -20
 let rotationWithGap = 0
 let radio = 10
 let speed = 5
@@ -76,16 +76,6 @@ machine.addCallback(() => {
             lastN.shift()
             // console.log(11);
         }
-        // if (keyListener.isPressed(87)) {
-        //     target.rotation.y = rotationWithGap2
-        //     target.position.x += Math.sin(rotationWithGap2) * speed * n
-        //     target.position.z += Math.cos(rotationWithGap2) * speed * n
-        // }
-        // if (keyListener.isPressed(83)) {
-        //     target.rotation.y = rotationWithGap2
-        //     target.position.x -= Math.sin(rotationWithGap2) * speed * n
-        //     target.position.z -= Math.cos(rotationWithGap2) * speed * n
-        // }
         checkAngle(rotationWithGap2)
     }
 

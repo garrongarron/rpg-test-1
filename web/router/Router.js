@@ -32,9 +32,7 @@ window.onpopstate = (e) => {
 }
 
 let run = (pathname) => {
-    console.log(pathname);
     if (routes[lastPage]) routes[lastPage].hide()
-    console.log(routes[pathname], routes, pathname);
     if (routes[pathname]) {
         lastPage = pathname
         routes[pathname].show()

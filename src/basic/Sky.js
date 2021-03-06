@@ -9,7 +9,7 @@ let setSky = (scene) => {
         "exponent": { value: .3 }
     };
 
-    const skyGeo = new THREE.SphereGeometry(600, 32, 15);
+    const skyGeo = new THREE.SphereGeometry(500, 32, 15);
     const skyMat = new THREE.ShaderMaterial({
         uniforms: uniforms,
         vertexShader: shaders._VS,

@@ -2,9 +2,9 @@ let directionalLight = new THREE.DirectionalLight(0x888888, 1.0);
 directionalLight.position.set(0, 100,0);
 directionalLight.target.position.set(0, 0, 0);
 directionalLight.castShadow = true;
-directionalLight.shadow.bias = -0.001;
-directionalLight.shadow.mapSize.width = 2048;
-directionalLight.shadow.mapSize.height = 2048;
+directionalLight.shadow.bias = -0.01;
+directionalLight.shadow.mapSize.width = 2048*2;
+directionalLight.shadow.mapSize.height = 2048*2;
 directionalLight.shadow.camera.near = 0.5;
 directionalLight.shadow.camera.far = 150.0;
 let gap = 100

@@ -10,7 +10,7 @@ const loader = new THREE.FBXLoader();
 let loadCharacter = (scene, callback) => {
 
     loader.load('src/models/SwordAndShield/' + fileList[0], function (object) {
-        object.position.set(-2, 0, 0)
+        object.position.set(0, 0, 0)
         object.rotation.y = Math.PI
         let s = 0.02
         object.scale.set(s, s, s)

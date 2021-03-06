@@ -1,5 +1,6 @@
 import run from "../../voice-chat/app.js"
 
+let audio, logo, background
 let logoBackground = () => {
     background.innerText = ''
     background.style.cursor = 'inherit';
@@ -26,20 +27,32 @@ let fadeTologo = () => {
         run()
     }, 7 * 1000);
 }
-let background = document.createElement('div')
+
+
+
+
+
+background = document.createElement('div')
 background.classList.add('logo-background')
-
-
 document.body.appendChild(background)
 
-
-let audio = document.createElement('audio')
-audio.src = 'audios/Intro.2.mp3'
-
-let logo = document.createElement('div')
-logo.classList.add('logo')
-logo.innerText = 'The Warrior'
 let begin = () => {
+    // return
+
+
+
+
+    audio = document.createElement('audio')
+    audio.src = 'audios/Intro.2.mp3'
+
+    logo = document.createElement('div')
+    logo.classList.add('logo')
+    logo.innerText = 'The Warrior'
+
+
+
+
+
     // background.innerText = 'Click to start'
     document.body.appendChild(audio)
     background.addEventListener('click', logoBackground)

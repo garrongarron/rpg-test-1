@@ -16,7 +16,7 @@ import setRoom from './MyRoom.js'
 import receiveConnection from './ConnectionHandler.js'
 
 let run = () => {
-
+    return
     clickOnRoom((li) => {
         li.addEventListener('click', (e) => {
             console.log('Room selected ' + li.innerText);

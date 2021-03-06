@@ -4,7 +4,7 @@ let blend = null
 addCallback((t) => {
     blend = THREE.Terrain.generateBlendedMaterial([
         { texture: t[0] },//arena
-        { texture: t[1], levels: [-80, -35, 20, 25] },//original -80, -35, 20, 50 ///pasto
+        { texture: t[1], levels: [1.5, 1.6, 20, 22] },//original -80, -35, 20, 50 ///pasto
         { texture: t[2], levels: [5, 22, 25, 30] },//1, 20, 60, 70// original 20, 50, 60, 85 //roca
         { texture: t[3], levels: [25, 30, 40, 100] },//1, 20, 60, 70// original 20, 50, 60, 85 //roca
         // { texture: t[3], glsl: '1.0 - smoothstep(25.0 + smoothstep(-256.0, 256.0, vPosition.x) * 10.0, 35.0, vPosition.z)' },//nieve

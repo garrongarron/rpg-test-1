@@ -1,9 +1,12 @@
 let loadTextures = () => {
-    var loader = new THREE.TextureLoader();
+    var loader = new THREE.TextureLoader(); 
 
-    let promise1 = new Promise((resolve, reject) => { loader.load('demo/img/sand1.jpg', (t1) => { resolve(t1) }) })
+    // let promise1 = new Promise((resolve, reject) => { loader.load('demo/img/sand1.jpg', (t1) => { resolve(t1) }) })//images/sand-512.jpg
+    let promise1 = new Promise((resolve, reject) => { loader.load('images/sand-512.3.jpg', (t1) => { resolve(t1) }) })//images/sand-512.jpg
     
     let promise2 = new Promise((resolve, reject) => { loader.load('demo/img/grass1.jpg', (t2) => { resolve(t2) }) })
+    // let promise2 = new Promise((resolve, reject) => { loader.load('images/grass-512.jpg', (t2) => { resolve(t2) }) })
+    
     
     
     // let promise3 = new Promise((resolve, reject) => { loader.load('demo/img/stone1.jpg', (t3) => { resolve(t3) }) })
