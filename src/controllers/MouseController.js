@@ -28,6 +28,8 @@ let setTarget = (t) => {
 keyListener.start()
 machine.addCallback(() => {
     if (target) {
+        // console.log(Math.round(target.position.x),Math.round(target.position.z));
+        
         let angleRotation = (acumulated.x / rotationSpeed)
         rotation = - (angleRotation) * Math.PI / 180
         rotationWithGap = - (angleRotation + gap) * Math.PI / 180

@@ -18,7 +18,7 @@ class Gravity {
             lightPositioning = false
             directionalLight.position.x = position.x
             directionalLight.position.z = position.z
-            directionalLight.target.position.set(position.x, directionalLight.target.position.y , position.z);
+            directionalLight.target.position.set(position.x-30, directionalLight.target.position.y , position.z-30);
             directionalLight.target.updateMatrixWorld();
 
         }
