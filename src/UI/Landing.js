@@ -32,15 +32,15 @@ let fadeTologo = () => {
 
 
 
-background = document.createElement('div')
-background.classList.add('logo-background')
-document.body.appendChild(background)
+
 
 let begin = () => {
     // return
 
 
-
+    background = document.createElement('div')
+    background.classList.add('logo-background')
+    document.body.appendChild(background)
 
     audio = document.createElement('audio')
     audio.src = 'audios/Intro.2.mp3'

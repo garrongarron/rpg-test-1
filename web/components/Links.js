@@ -1,5 +1,5 @@
 let links = [
-    'The Game', 'Streaming','How to play', 'Play Now'
+    'The Game', 'How to play', 'Streaming', 'Play Now'
 ]
 
 export default links

@@ -4,7 +4,7 @@ import cssLoader from '../tools/CssLoader.js'
 
 class Navigator extends Props { 
     render(links) {
-        cssLoader.load('web/components/nav.css')
+        cssLoader.load('web/components/nav.css?'+(new Date().getTime()))
         return _(
             'nav',
             links,

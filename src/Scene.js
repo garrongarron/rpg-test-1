@@ -55,8 +55,8 @@ scene.add(water);
 
 
 getPaladinPromise().then(paladin => {
-    scene.add(paladin)
-    paladin.position.set(0.29589998756613767, -3.9426677459998634, -1.8808037406017266)
+    scene.add(paladin) 
+    paladin.position.set(123.66827816140201, -0.6073749816485225, -142.87066427145885)
     skyFollow(() => paladin)
     mouseController(paladin)
     setCharacterToSpawn(paladin, scene)

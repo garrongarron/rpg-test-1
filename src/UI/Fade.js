@@ -39,17 +39,17 @@ let fadeToBlack = () => {
         black.style.opacity = opacity
     }, 1000 * getDelta());
 }
-let fadeFromBlack = () => {
-    interval = setInterval(() => {
-        opacity -= getDelta()*(1/time)
-        if (opacity < 0) {
-            opacity = 0
-            clearInterval(interval)
-            black.style.display = 'none'
-        }
-        black.style.opacity = opacity
-    }, 1000 * getDelta());
-}
+// let fadeFromBlack = () => {
+//     interval = setInterval(() => {
+//         opacity -= getDelta()*(1/time)
+//         if (opacity < 0) {
+//             opacity = 0
+//             clearInterval(interval)
+//             black.style.display = 'none'
+//         }
+//         black.style.opacity = opacity
+//     }, 1000 * getDelta());
+// }
 
 // fadeToBlack()
 
