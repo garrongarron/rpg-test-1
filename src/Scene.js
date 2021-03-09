@@ -10,7 +10,7 @@ import mouseController from './controllers/MouseController.js';
 import './UI/Fade.js'
 import './UI/Movements.js'
 import './UI/Landing.js'
-// import run from "../voice-chat/app.js"
+import run from "../voice-chat/app.js"
 import skyFollow from './controllers/SkyController.js'
 import './controllers/Broadcast.js'
 import { setCharacter as setCharacterToSpawn } from './controllers/Spawner.js'
