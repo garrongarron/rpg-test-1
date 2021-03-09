@@ -279,3 +279,10 @@ div.list-container ul.userList li {
     position: absolute;
     background: var(--color);
 }
+
+/*Helpers*/
+.keys-to-move{
+    position: fixed;
+    bottom: 2vw;
+    right: 2vw;
+}
