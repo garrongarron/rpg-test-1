@@ -25,6 +25,9 @@ let run = () => {
             hideRooms()
             stopRoomRequests()
             setRoom()
+            //show the keys
+            document.querySelector('.keys-to-move').classList.remove('hide')
+            keyListener.start()
         })
     })
 
