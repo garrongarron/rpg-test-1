@@ -1,6 +1,7 @@
 import StateMachine from './StateMachine.js'
 import machine from '../basic/Machine.js'
 import gravity from '../character/Gravity.js'
+import { collision } from '../character/InFront.js'
 
 let speed = 3 //per second
 speed = 10 //running 
@@ -24,8 +25,8 @@ class ForwardBackwardAndRotation {
             jump: false
         }
         this.state = Object.assign({}, this.stateDefautl)
-        this.angle =  angle
-        this.speed =  speed
+        this.angle = angle
+        this.speed = speed
 
         this.machine = machine.addCallback(() => {
             this.speed = 3
@@ -55,6 +56,7 @@ class ForwardBackwardAndRotation {
     }
 
     up(deltaTime) {
+        if(collision) return
         this.position.set(
             this.position.x + Math.sin(this.rotation.y) * this.speed * deltaTime,
             this.position.y,
@@ -81,12 +83,12 @@ class ForwardBackwardAndRotation {
     }
 
     left(deltaTime) {
-        this.rotation.y += this.angle * deltaTime * (1/(90 / (90 - this.position.y*2)))
+        this.rotation.y += this.angle * deltaTime * (1 / (90 / (90 - this.position.y * 2)))
         this.state.left = true
     }
 
     right(deltaTime) {
-        this.rotation.y -= this.angle * deltaTime * (1/(90 / (90 - this.position.y*2)))
+        this.rotation.y -= this.angle * deltaTime * (1 / (90 / (90 - this.position.y * 2)))
         this.state.right = true
     }
 

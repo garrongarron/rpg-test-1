@@ -6,6 +6,8 @@ import keyListener from '../basic/KeyListener.js'
 import { getDelta } from '../basic/Clock.js'
 import gravity from '../character/Gravity.js'
 import checkAngle from './AngleEmmiter.js'
+
+
 // import '../objects/pointer.js'
 // import './ShooterSystem.js'
 
@@ -29,7 +31,7 @@ keyListener.start()
 machine.addCallback(() => {
     if (target) {
         // console.log(Math.round(target.position.x),Math.round(target.position.z));
-        
+
         let angleRotation = (acumulated.x / rotationSpeed)
         rotation = - (angleRotation) * Math.PI / 180
         rotationWithGap = - (angleRotation + gap) * Math.PI / 180

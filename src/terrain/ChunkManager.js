@@ -59,7 +59,7 @@ class ChunkManagers {
         })
 
         while (outOfDate.length != 0) {
-            console.log('outOfDate XD');
+            // console.log('outOfDate XD');
             let old = outOfDate.shift()
             let tmpChunk = this.chunks.get(old)
             this.chunks.delete(old)

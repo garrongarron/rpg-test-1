@@ -1,8 +1,8 @@
-import { directionalLight, ambientLight, hemiLight } from './basic/Lights.js'
+import { directionalLight, ambientLight, hemiLight, pointLight } from './basic/Lights.js'
 import setSky from './basic/Sky.js'
 import setFog from './basic/Fog.js'
 // import loadCharacter, { loadAnimations, getCharacter } from './basic/Character.js'
-import box from './objects/Box.js'
+// import box from './objects/Box.js'
 import water from './objects/Water.js'
 import loadPlaneTerrain, { setTarget } from './objects/PlaneTerrain.js'
 import mouseController from './controllers/MouseController.js';
@@ -16,7 +16,11 @@ import { setCharacter as setCharacterToSpawn } from './controllers/Spawner.js'
 import getPaladinPromise from './basic/MainCharacter.js'
 import loadTrees from './objects/Trees.js'
 import loadHeadquarter from './models/buildings/Headquarter.js'
-
+import loadTend from './models/buildings/Tend.js'
+import loadTendB from './models/buildings/Tend_b.js'
+// import arrowHelper from './objects/Arrow.js'
+import inFront from './character/InFront.js'
+import getInventory from './models/inventory/Inventory.js'
 
 
 
@@ -28,6 +32,7 @@ const scene = new THREE.Scene();
 scene.add(directionalLight);
 scene.add(ambientLight);
 scene.add(hemiLight);
+scene.add( pointLight );
 
 if (false) {
     //cube
@@ -56,17 +61,17 @@ getPaladinPromise().then(paladin => {
     mouseController(paladin)
     setCharacterToSpawn(paladin, scene)
     setTarget(paladin)
+    inFront(paladin, scene)
+    getInventory(paladin, scene)
 })
-
+// scene.add( arrowHelper )
 loadPlaneTerrain(scene)
-
-
-
-
-
 
 loadHeadquarter(scene)
 
+
+loadTend(scene)
+loadTendB(scene)
 
 
 

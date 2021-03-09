@@ -1,5 +1,6 @@
 import fileList from "../models/Trees/FileList.js";
 import gravity from '../character/Gravity.js'
+
 let trees = []
 let loadTrees = (scene) => {
 
@@ -23,7 +24,7 @@ let loadTrees = (scene) => {
         setTimeout(() => {
             let i = 0
             let nn = 0
-            while (i < 80 ) { //&& nn < 2000
+            while (i < 80) { //&& nn < 2000
                 nn++
                 let p = {
                     x: Math.random() * 512 - 256,
@@ -33,7 +34,7 @@ let loadTrees = (scene) => {
                 let g = gravity.check(p)
                 if (g.tmp) {
                     p.y = 1 - g.tmp.distance
-                    if(p.y < 0.1) continue
+                    if (p.y < 0.1) continue
                     // console.log(g.tmp.distance, p);
                     let tree = trees[Math.floor(Math.random() * trees.length)].clone()
                     tree.position.set(p.x, p.y, p.z)
