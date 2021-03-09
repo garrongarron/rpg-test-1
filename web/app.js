@@ -2,12 +2,15 @@ import router from './router/Router.js'
 import cssLoader from './tools/CssLoader.js'
 import landingPage from './pages/Landing.js'
 import streamer from './pages/Streamer.js'
+import feedbackPage from './pages/Feedback.js'
 import howToPlay from './pages/WhoToPlay.js'
+
 
 router.setRoutes({
     '/': landingPage,
     '/The-Game': landingPage,
     '/Streaming': streamer,
+    '/Feedback': feedbackPage,
     '/How-to-play': howToPlay,
 })
 router.linkTo('/')
