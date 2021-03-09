@@ -10,7 +10,7 @@ let components = [
     _('section', [
         _('h1', 'Feedback'),
         _('br'),
-        _('p', `You can leave a message or feedbak on our discord server`),
+        _('p', `You can leave a message or feedback on our discord server`),
         _('a', `Discord`, (node)=>{
             node.setAttribute('href', 'https://discord.gg/gm5pWWfc' )
             node.setAttribute('target', '_blank' )
