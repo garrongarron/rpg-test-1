@@ -27,7 +27,6 @@ let target = null
 let setTarget = (t) => {
     target = t
 }
-keyListener.start()
 machine.addCallback(() => {
     if (target) {
         // console.log(Math.round(target.position.x),Math.round(target.position.z));

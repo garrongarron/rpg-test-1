@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="audio.css">
+    
     <script src="js/Socket.js"></script>
     <script src="js/peerjs.min.js"></script>
 
@@ -21,12 +24,11 @@
     <script src="src/Renderer.js" type="module"></script>
     <script src="voice-chat/app.js" type="module"></script>
     <script src="web/app.js" type="module"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="audio.css">
+    
 
 </head>
 <body>
-    <canvas id="c"></canvas>
+    <canvas id="c" class="hide"></canvas>
     <div class="arrow-container hide">
         <svg id="flecha" fill='url(#MyGradient)' width="50" height="50" viewBox="80 -10 350 600" stroke="black"  stroke-width="20" fill="url(#grad1)">
             <path d="M479.046,283.925c-1.664-3.989-5.547-6.592-9.856-6.592H352.305V10.667C352.305,4.779,347.526,0,341.638,0H170.971

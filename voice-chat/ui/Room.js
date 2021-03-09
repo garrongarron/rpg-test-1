@@ -10,7 +10,7 @@ btn.setAttribute('type', 'button')
 btn.value = 'Create'
 
 input.addEventListener('focus', () => {
-    msg.innerText = "More Than 3 letters"
+    msg.innerText = "More than 3 letters"
 })
 input.addEventListener('blur', () => {
     msg.innerText = "Create room"

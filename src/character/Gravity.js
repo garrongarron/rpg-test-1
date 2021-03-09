@@ -26,9 +26,10 @@ class Gravity {
         pointLight.position.x = position.x
         pointLight.position.z = position.z
 
-
-
-        let tmp = ray.intersectObjects(scene.children, true).filter(obj => obj.object.name != "Paladin_J_Nordstrom")[0]
+        let tmp = ray.intersectObjects(scene.children, true).filter(obj => {
+           return  !obj.object.free &&  obj.object.type != "BoxHelper"
+        })[0] 
+        
         let isGrounded = !!tmp && tmp.distance < 10
         return {
             isGrounded: isGrounded,

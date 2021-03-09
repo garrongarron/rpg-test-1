@@ -30,5 +30,6 @@ let keysToMove = `
 </svg>`
 let keys = document.createElement('div')
 keys.classList.add('keys-to-move')
+keys.classList.add('hide')
 keys.innerHTML = keysToMove
 document.body.appendChild(keys)

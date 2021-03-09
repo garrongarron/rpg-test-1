@@ -12,6 +12,7 @@ let start = () => {
         audio.play();
         fadeTologo()//1
     }, 1000);
+    document.querySelector('#c').classList.remove('hide')
     document.removeEventListener('click', start)
 }
 
@@ -21,6 +22,7 @@ let fadeTologo = () => {
 
     background.style.opacity = 0
     background.classList.add('logo-background-fadeOut')//new
+
     setTimeout(() => {
         background.remove()
         logo.remove()

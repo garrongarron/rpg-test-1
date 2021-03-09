@@ -67,6 +67,7 @@ class ForwardBackwardAndRotation {
         if (ckecked.isGrounded) {
             this.position.y -= ckecked.tmp.distance - 1
         }
+        // console.log(ckecked.isGrounded);
     }
 
     down(deltaTime) {

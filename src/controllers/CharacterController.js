@@ -36,7 +36,7 @@ let setCharacter = (c) => {
     character = c
 }
 
-keyListener.start()
+
 
 machine.addCallback(() => {
     let deltaTime = getDelta();

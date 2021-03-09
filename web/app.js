@@ -13,7 +13,10 @@ router.setRoutes({
     '/Feedback': feedbackPage,
     '/How-to-play': howToPlay,
 })
-router.linkTo('/')
+document.fonts.ready.then(()=>{
+    router.linkTo('/')
+})
+
 
 
 

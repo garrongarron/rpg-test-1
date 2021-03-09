@@ -14,6 +14,7 @@ import setName from './WhoAmI.js'
 import showLogoutBtn from './ui/Logout.js'
 import setRoom from './MyRoom.js'
 import receiveConnection from './ConnectionHandler.js'
+import keyListener from '../src/basic/KeyListener.js'
 
 let run = () => {
     // return
@@ -101,6 +102,10 @@ let run = () => {
             room.hide()
             setRoom()
             hideRooms()
+
+            //show the keys
+            document.querySelector('.keys-to-move').classList.remove('hide')
+            keyListener.start()
         })
     })
 
