@@ -1,6 +1,7 @@
 import run from "../../voice-chat/app.js"
+import startGame from '../game/Game.js'
 
-let audio, logo, background
+let audio, audioMusic, logo, background
 let logoBackground = () => {
     background.innerText = ''
     background.style.cursor = 'inherit';
@@ -10,6 +11,9 @@ let logoBackground = () => {
 let start = () => {
     setTimeout(() => {
         audio.play();
+        setTimeout(() => {
+            audioMusic.play();
+        }, 5 * 1000);
         fadeTologo()//1
     }, 1000);
     document.querySelector('#c').classList.remove('hide')
@@ -26,7 +30,13 @@ let fadeTologo = () => {
     setTimeout(() => {
         background.remove()
         logo.remove()
-        run()
+
+        let flag = confirm("Play in Multiplayer Mode");
+        if (flag) {
+            run()
+        } else {
+            startGame()
+        }
     }, 7 * 1000);
 }
 
@@ -46,6 +56,10 @@ let begin = () => {
 
     audio = document.createElement('audio')
     audio.src = 'audios/Intro.2.mp3'
+
+    audioMusic = document.createElement('audio')
+    audioMusic.src = 'audios/ClashOfClans.mp3'
+    audioMusic.volume = 0.2;
 
     logo = document.createElement('div')
     logo.classList.add('logo')

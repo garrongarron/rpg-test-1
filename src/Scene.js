@@ -13,6 +13,7 @@ import './UI/Landing.js'
 import run from "../voice-chat/app.js"
 import skyFollow from './controllers/SkyController.js'
 import './controllers/Broadcast.js'
+import setColorScene  from './controllers/LightControllers.js'
 import { setCharacter as setCharacterToSpawn } from './controllers/Spawner.js'
 import getPaladinPromise from './basic/MainCharacter.js'
 import loadTrees from './objects/Trees.js'
@@ -74,7 +75,7 @@ loadHeadquarter(scene)
 loadTend(scene)
 loadTendB(scene)
 
-
+setColorScene(scene)
 
 
 export default scene

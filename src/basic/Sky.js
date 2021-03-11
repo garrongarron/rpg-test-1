@@ -1,5 +1,5 @@
 import shaders from './SkyShaders.js'
-let sky
+let sky =  null
 let setSky = (scene) => {
 
     const uniforms = {

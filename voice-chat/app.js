@@ -15,6 +15,7 @@ import showLogoutBtn from './ui/Logout.js'
 import setRoom from './MyRoom.js'
 import receiveConnection from './ConnectionHandler.js'
 import keyListener from '../src/basic/KeyListener.js'
+import startGame from '../src/game/Game.js'
 
 let run = () => {
     // return
@@ -26,8 +27,7 @@ let run = () => {
             stopRoomRequests()
             setRoom()
             //show the keys
-            document.querySelector('.keys-to-move').classList.remove('hide')
-            keyListener.start()
+            startGame()
         })
     })
 
@@ -107,8 +107,7 @@ let run = () => {
             hideRooms()
 
             //show the keys
-            document.querySelector('.keys-to-move').classList.remove('hide')
-            keyListener.start()
+            startGame()
         })
     })
 

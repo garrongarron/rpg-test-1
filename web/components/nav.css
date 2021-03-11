@@ -14,18 +14,18 @@
 .web-container .nav>ul>li>a {
     color: orange;
     text-shadow: 1px 1px 2px red;
-    font-size: 1.em;
+    font-size: .7em;
     padding-left: .5em;
 }
-.web-container .nav>ul>li>a:hover{
+
+.web-container .nav>ul>li>a:hover {
     color: yellow;
     text-shadow: 1px 1px 2px red;
 }
 
-.web-container .nav>ul>li:last-of-type>a{
+.web-container .nav>ul>li:last-of-type>a {
     color: yellow;
 }
-
 
 /*Delete from here*/
 
@@ -59,12 +59,36 @@
     color: red;
     text-shadow: 2px 2px 4px yellow;
 }
+
 .web-container b, .web-container strong {
     color: white;
     text-shadow: 1px 1px 2px red;
 }
+
 .web-container p {
     text-align: justify;
     color: rgb(49, 31, 8);
     text-shadow: 1px 1px 2px white;
+}
+
+/**/
+
+.ml6 {
+    position: relative;
+    font-weight: 900;
+    font-size: 3.3em;
+}
+
+.ml6 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+}
+
+.ml6 .letter {
+    display: inline-block;
+    line-height: 1em;
 }

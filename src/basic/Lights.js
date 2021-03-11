@@ -23,6 +23,7 @@ let ambientLight = new THREE.AmbientLight(0xffffff, 0.125);//0x303030
 
 const pointLight = new THREE.PointLight( 0x111111, 4, 250 );
 pointLight.position.set( 150, 20, 50 );
+pointLight.intensity = 0
  
 
 export {directionalLight, ambientLight, hemiLight, pointLight}
